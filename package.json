@@ -10,22 +10,21 @@
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"
   },
-  "files": [
-    "dist"
-  ],
-  "module": "dist/index.js",
+  "files": ["dist"],
+  "keywords": ["ascii", "ascii-art", "codegen", "automation"],
   "license": "MIT",
-  "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "name": "botbanner",
   "private": false,
   "repository": "https://github.com/rhinodavid/botbanner.git",
   "scripts": {
     "build": "tsc src/index.ts --outDir dist -d --sourceMap",
-    "test": "jest",
     "postversion": "git push && git push --tags",
     "prepare": "yarn build",
-    "prepublishOnly": "jest"
+    "prepublishOnly": "jest",
+    "test": "jest"
   },
+  "type": "module",
   "version": "1.0.0"
 }
