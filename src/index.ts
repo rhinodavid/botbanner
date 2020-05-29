@@ -1,3 +1,21 @@
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX                 XX                                                                XX
+XX                 XX                                                                XX
+XX                 XX                                                                XX
+XX       __i       XX                                                                XX
+XX      [d b]      XX   Create Bot Banner                                            XX
+XX       ]e[       XX                                                                XX
+XX     /| []|\     XX                                                                XX
+XX   ()/|___|\()   XX   Creates an ASCII header with a robot and the supplied text   XX
+XX      /  |       XX                                                                XX
+XX     _\  |_      XX                                                                XX
+XX                 XX                                                                XX
+XX                 XX                                                                XX
+XX                 XX                                                                XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
 import * as createAsciiBot from "asciibots";
 
 function fill<T>(char: T, length: number): string {
@@ -37,24 +55,6 @@ function depadBot(botByLine: Array<string>): Array<string> {
 
 /**
  * Create a banner with a robot and the provided text
- * 
- * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- * XX                 XX                                                                XX
- * XX                 XX                                                                XX
- * XX                 XX                                                                XX
- * XX       __i       XX                                                                XX
- * XX      [d b]      XX   Create Bot Banner                                            XX
- * XX       ]e[       XX                                                                XX
- * XX     /| []|\     XX                                                                XX
- * XX   ()/|___|\()   XX   Creates an ASCII header with a robot and the supplied text   XX
- * XX      /  |       XX                                                                XX
- * XX     _\  |_      XX                                                                XX
- * XX                 XX                                                                XX
- * XX                 XX                                                                XX
- * XX                 XX                                                                XX
- * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  *
  * @param {Array<string>} text Lines of the banner text
  * @param {string?}  options.borderChar Character to use as the border [default "@"]
@@ -63,14 +63,14 @@ function depadBot(botByLine: Array<string>): Array<string> {
  * @param {boolean?} options.comment Add characters at the start and end to make the banner a JS comment
  * @param {number?} options.minWidth Right-pads the text area to achive an overall width
  * @param {number?} options.padding The padding around the robot and text [default 1]
- * 
+ *
  * @returns {string}
  */
 export default function createBotBanner(
   text: Array<string>,
   options?: {
-    borderChar?: string; 
-    borderWidth?; 
+    borderChar?: string;
+    borderWidth?;
     botId?: number;
     comment?: boolean;
     minWidth?: number;
@@ -176,11 +176,11 @@ export default function createBotBanner(
         "The banner isn't wide enough for comment indicator symbols"
       );
     }
-    resultArray[0][0] = "/";
-    resultArray[0][1] = "*";
-    const lastLine = resultArray[resultArray.length - 1];
-    lastLine[lastLine.length - 1] = "/";
-    lastLine[lastLine.length - 2] = "*";
+    resultArray[0] = "/*" + resultArray[0].slice(2);
+    resultArray[resultArray.length - 1] =
+      resultArray[resultArray.length - 1].slice(0, [
+        resultArray[resultArray.length - 1].length - 2,
+      ]) + "*/";
   }
   return resultArray.join("\n");
 }
