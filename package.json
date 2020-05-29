@@ -10,8 +10,15 @@
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"
   },
-  "files": ["dist"],
-  "keywords": ["ascii", "ascii-art", "codegen", "automation"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "ascii",
+    "ascii-art",
+    "codegen",
+    "automation"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -26,5 +33,5 @@
     "test": "jest"
   },
   "type": "module",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
