@@ -1,0 +1,10 @@
+{
+  "name": "botbanner",
+  "version": "1.0.0",
+  "description": "Create a banner with an ascii bot",
+  "main": "dist/index.js",
+  "repository": "https://github.com/rhinodavid/botbanner.git",
+  "author": "David Walsh <5778036+rhinodavid@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false
+}
