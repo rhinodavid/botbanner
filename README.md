@@ -14,9 +14,13 @@ $             $                                                                 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 ```
 
+## Install
+
 ```
 yarn add botbanner
 ```
+
+## Use
 
 ```typescript
 import * as createBanner from "botbanner";
